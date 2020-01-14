@@ -42,9 +42,9 @@ exports.getLocalConfig = function() {
     // Reading vital config from environment variables
     //
        
-    localConfig.IDENTITYMETADATA = 'https://login.microsoftonline.com/' + (process.env.TENANTID) + '/v2.0/.well-known/openid-configuration'
-    localConfig.CLIENTID = (process.env.CLIENTID || config.creds.clientID);
-    localConfig.CLIENTSECRET = (process.env.CLIENTSECRET || config.creds.clientSecret);
+    localConfig.IDENTITYMETADATA = config.creds.identityMetadata
+    localConfig.CLIENTID = config.creds.clientID;
+    localConfig.CLIENTSECRET = config.creds.clientSecret;
     
     //If we are running in the cloud we do not, usually, specify port as it's 80
     if (hostDomainName !== 'localhost') {

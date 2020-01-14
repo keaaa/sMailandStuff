@@ -10,7 +10,8 @@ exports.appConfig = {
 
 exports.creds = {
     // Required
-    identityMetadata: 'https://login.microsoftonline.com/3' + process.env.TENANTID + '/v2.0/.well-known/openid-configuration', 
+    identityMetadata: 'https://login.microsoftonline.com/' + process.env.TENANT_ID + '/v2.0/.well-known/openid-configuration', 
+    // identityMetadata: https://login.microsoftonline.com/3aa4a235-b6e2-48d5-9195-7fcf05b459b0/v2.0/.well-known/openid-configuration
     // or equivalently: 'https://login.microsoftonline.com/<tenant_guid>/v2.0/.well-known/openid-configuration'
     //
     // or you can use the common endpoint
@@ -18,7 +19,7 @@ exports.creds = {
     // To use the common endpoint, you have to either turn `validateIssuer` off, or provide the `issuer` value.
   
     // Required, the client ID of your app in AAD  
-    clientID: process.env.CLIENTID,
+    clientID: process.env.CLIENT_ID,
   
     // Required, must be 'code', 'code id_token', 'id_token code' or 'id_token'
     // If you want to get access_token, you must use 'code', 'code id_token' or 'id_token code' 
@@ -35,7 +36,7 @@ exports.creds = {
   
     // Required if `responseType` is 'code', 'id_token code' or 'code id_token'. 
     // If app key contains '\', replace it with '\\'.
-    clientSecret: process.env.CLIENTSECRET, 
+    clientSecret: process.env.CLIENT_SECRET, 
   
     // Required to set to false if you don't want to validate issuer
     validateIssuer: false,
@@ -66,8 +67,7 @@ exports.creds = {
     // (2) if you want to get access_token for graph api, use the graph api url like 'https://graph.microsoft.com/mail.read'
     // scope: ['profile', 'offline_access', 'https://graph.microsoft.com/mail.read'],
     
-    scope: ['profile', 'openid', 'offline_access',
-        'https://graph.microsoft.com/mail.read'], 
+    scope: ['profile', 'openid', 'offline_access','https://graph.microsoft.com/mail.read'], 
     // Optional, 'error', 'warn' or 'info'
     loggingLevel: 'info',
   
