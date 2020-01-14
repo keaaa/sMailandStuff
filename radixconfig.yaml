@@ -1,7 +1,7 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: smailandstuff
+  name: smailandstuff-keaaa
 spec:
   environments:
     - name: production
@@ -19,7 +19,7 @@ spec:
         - environment: production
           variables:
             TENANTID: "3aa4a235-b6e2-48d5-9195-7fcf05b459b0"
-            CLIENTID: "bc5ee045-a194-4c04-acf9-1718f58bf5c6"
+            CLIENTID: "5ff29aac-98c7-4bcb-b75f-1d43bbba9c2e"
             NODE_ENV: "production"
       secrets:
         - CLIENTSECRET
